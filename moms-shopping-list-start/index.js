@@ -5,7 +5,7 @@ const groceryList = document.querySelector(".final-list");
 
 
 //Event Listeners
-// document.addEventListener("DOMContentLoad", getGroceries);
+document.addEventListener("DOMContentLoad", getGroceries);
 groceryButton.addEventListener("click", addToList);
 groceryList.addEventListener("click", deleteEdit);
 
@@ -23,7 +23,7 @@ function addToList(event){
   newGrocery.classList.add("grocery-item");
   //grab grocery div and append new grocery
   groceryDiv.appendChild(newGrocery);
-  // saveLocal(groceryInput.value);
+  saveLocal(groceryInput.value);
   //Delete button
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = "<i class= 'fa-solid fa-trash-can'></i>";
@@ -33,24 +33,6 @@ function addToList(event){
   const editButton = document.createElement("button");
   editButton.innerHTML = "<i class='fa-solid fa-pen'></i>";
   editButton.classList.add("edit-button");
-
-// after edit button is created 
-  editButton.addEventListener("click", function(){
-
-    // create input field here 
-    // and create a button for the input field
-    // inputField Here 
-    // inputFieldButton here
-
-    // add event listener to input field 
-    // this  will allow the user to save their edit
-    inputFieldSubmitButton.addEventListener("click", function(){
-
-      // take the text from input field 
-      // set the newGrocery.innerText = inputField.value
-    })
-  })
-
   //append it 
   groceryDiv.appendChild(editButton);
   // //Append to ul list "grocery-list"
@@ -59,8 +41,8 @@ function addToList(event){
   groceryInput.value = "";
 }
 
-function deleteEdit(event){
-  const item = event.target;
+function deleteEdit(e){
+  const item = e.target;
   if(item.classList[0] === "delete-button"){
     const removeEdit = item.parentElement;
     removeEdit.remove();
@@ -76,7 +58,7 @@ function deleteEdit(event){
   // }
 }
 function saveLocal(grocery){
-  //create a check to see if i already have a grocery list in local?
+  //create a check to see if i already have a grocery list in local
   let groceryCheck;
   if(localStorage.getItem("groceryCheck") === null){
     groceryCheck = [];
@@ -117,4 +99,5 @@ function getGroceries(){
     groceryList.appendChild(groceryDiv);
     });
 }
-getGroceries();
+
+

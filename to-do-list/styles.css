@@ -1,0 +1,67 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: orange;
+}
+
+.container{
+  border: 1px solid black;
+
+  width:90%;
+  margin: auto;
+  display: flex;
+
+}
+
+.groceries{
+  width: 600px;
+  min-height: 100vh;
+  margin: auto;
+  background: white;
+  box-shadow:10px 10px 24px black;
+}
+
+.groceries h1{
+  font-size: 2.5rem;
+  margin-top: 1em;
+}
+
+.groceries i{
+  font-size: 2rem;
+  color: orange;
+}
+
+.groceries input{
+  outline: 0;
+  border: 0;
+  border-bottom: 3px solid black;
+  font-size: 1.5rem;
+
+}
+
+#allitems h2{
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 15px;
+  font-size: 2rem;
+}
+
+@media(max-width:480px){
+  .groceries h1{
+    font-size: 2rem
+  }
+  .groceries i{
+    font-size: 1.5rem
+
+  }  .groceries input{
+    font-size: 1rem
+
+  }  .groceries h2{
+    font-size: 1.5rem
+    margin-left: 25px;
+  }
+}
